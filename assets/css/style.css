@@ -1,0 +1,63 @@
+/* Gradient Tech — style.css
+Clean responsive layout, gradient accents, card system, animations */
+:root{
+--bg:#060818;
+--card:#071233;
+--muted:#9fb0c0;
+--accent-1:linear-gradient(135deg,#6ee7b7,#7dd3fc);
+--accent-col:#00d1b2;
+--glass:rgba(255,255,255,0.03);
+--radius:14px;
+--maxw:1100px;
+--gap:18px;
+}
+[data-theme="light"]{
+--bg:#f5f7fb;
+--card:#ffffff;
+--muted:#475569;
+--accent-col:#0ea5a4;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,var(--bg),#021227 80%);color:var(--muted);-webkit-font-smoothing:antialiased}
+.app{max-width:var(--maxw);margin:28px auto;padding:18px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0}
+.brand{display:flex;gap:12px;align-items:center}
+.avatar{width:84px;height:84px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.5)}
+.title h1{margin:0;color:#eafffb;font-size:18px}
+.subtitle{color:var(--accent-col);font-weight:700;margin-top:4px}
+.nav{display:flex;gap:8px;align-items:center}
+.btn{background:var(--accent-col);border:none;color:#021216;padding:8px 12px;border-radius:10px;font-weight:700;cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,#7dd3fc,#a78bfa);color:#001617}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+.container{display:grid;grid-template-columns:1fr;gap:18px;margin-top:18px}
+.hero{display:flex;gap:18px;align-items:flex-start}
+.hero-left{flex:1}
+.hero-right{width:320px}
+.card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 8px 40px rgba(2,6,23,0.6);transition:transform .28s ease}
+.card:hover{transform:translateY(-6px)}
+.muted{color:var(--muted)}
+h2{color:#eaf6f3;margin:0 0 10px;font-size:20px}
+.stats{display:flex;gap:12px;margin-top:12px}
+.stat{background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:10px;text-align:center;min-width:110px}
+.stat .num{font-weight:800;color:#e6f6f3;font-size:18px}
+.contact-row{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.chip{background:var(--glass);padding:8px 10px;border-radius:999px;color:var(--muted);text-decoration:none}
+.section{margin-top:14px}
+.section .section-head{display:flex;justify-content:space-between;align-items:center}
+.list{display:flex;flex-direction:column;gap:12px;margin-top:12px}
+.project{padding:12px;border-radius:10px;background:linear-gradient(0deg, rgba(255,255,255,0.02), transparent);border-left:4px solid rgba(255,255,255,0.03)}
+.project h4{margin:0;color:#fff}
+.project p{margin:6px 0 0;color:var(--muted)}
+.form-row{margin-top:10px}
+input,textarea{width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--muted)}
+.footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+.controls{display:flex;gap:8px;align-items:center;margin-top:8px}
+.hidden{display:none}
+@media (max-width:980px){
+.hero{flex-direction:column}
+.hero-right{width:100%}
+.app{padding:12px}
+}
+
+--- End of style.css

@@ -1,0 +1,62 @@
+{
+"name": "Guilherme Moneda",
+"role": "Technical Program Manager | Agile Coach",
+"headline": "I help organizations deliver resilient B2B platforms and scale engineering capabilities.",
+"summary": "I combine technical delivery experience, agile coaching, and program leadership to turn complex roadmaps into measurable business outcomes.",
+"stats": { "engineers": "35+", "countries": "19+", "golives": 4 },
+"contact": {
+"email": "[contact@guimoneda.com](mailto:contact@guimoneda.com)",
+"linkedin": "[https://www.linkedin.com/in/guilherme-moneda-b6ba9263](https://www.linkedin.com/in/guilherme-moneda-b6ba9263)",
+"resume": "/mnt/data/Profile.pdf"
+},
+"skills": [
+"Program Management",
+"Agile / Scrum",
+"CI/CD & DevOps",
+"Test Automation (Selenium, Robot)",
+"Cloud (GCP)",
+"Release Management",
+"OKRs & Delivery Metrics",
+"Stakeholder Management"
+],
+"projects": [
+{
+"title": "Built & scaled cloud platform team to support B2B e-commerce",
+"text": "Led a 35+ cross-functional organization of DevOps, Solution Architects and Operations Managers to maintain and evolve a cloud & infra platform.",
+"outcome": "Improved platform readiness for B2B operations and supported continuous delivery and product growth."
+},
+{
+"title": "Global product stabilization & expansion (BEES)",
+"text": "Contributed to QA, automation and release efforts for a B2B product used in 19+ countries and serving millions of users.",
+"outcome": "Drove release-quality improvements and four successful country go-lives (Colombia, Ecuador, Argentina, Dominican Republic)."
+},
+{
+"title": "Program metricization and cost optimization",
+"text": "Defined OKRs and DevOps metrics (team productivity, CI/CD health) and monitored costs monthly to identify optimization opportunities.",
+"outcome": "Introduced measurable KPIs and cost-awareness routines to improve delivery predictability and resource allocation."
+}
+],
+"experience": [
+{
+"company": "Avenue Code",
+"title": "Principal Project Manager",
+"period": "Dec 2022 – Dec 2023",
+"location": "São Paulo (remote)",
+"outcome": "Managed enterprise delivery streams and aligned program scope with product and leadership goals."
+},
+{
+"company": "CI&T",
+"title": "Technical Project Manager | Agile Coach",
+"period": "Aug 2021 – Dec 2022",
+"location": "São Paulo, Brazil",
+"outcome": "Built and led teams supporting cloud infra and B2B platforms; implemented OKRs & delivery metrics."
+},
+{
+"company": "CI&T",
+"title": "Scrum Master",
+"period": "Jan 2020 – Jul 2021",
+"location": "Campinas region",
+"outcome": "Accelerated delivery cadence and introduced quality-focused processes for the BEES Rewards product."
+}
+]
+}

@@ -1,616 +1,118 @@
 <!doctype html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Guilherme Moneda — Technical Program Manager | Agile Coach</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-  :root{
-    --bg:#071226; --card:#081426; --muted:#9fb0c0; --accent:#00d1b2; --accent-2:#7dd3fc; --glass: rgba(255,255,255,0.03);
-    --radius:14px;
-  }
-  [data-theme="light"]{
-    --bg:#f6f9fc; --card:#ffffff; --muted:#475569; --accent:#0ea5a4; --accent-2:#0369a1;
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,var(--bg),#02111b 80%);color:var(--muted);-webkit-font-smoothing:antialiased}
-  .app{max-width:1100px;margin:32px auto;padding:20px}
-  header.top{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:18px}
-  .brand{display:flex;gap:12px;align-items:center}
-  .avatar{width:88px;height:88px;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#001617;font-weight:800;font-size:28px;box-shadow:0 10px 30px rgba(0,0,0,0.35)}
-  .titleblock h1{margin:0;color:#eaf6f3;font-size:20px}
-  .titleblock p.lead{margin:6px 0 0;color:var(--muted);font-size:14px;max-width:780px}
-  nav.links{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-  .btn{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;padding:8px 12px;border-radius:10px;color:#021216;font-weight:700;cursor:pointer}
-  .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--muted);cursor:pointer}
-  .grid{display:grid;grid-template-columns:1fr 360px;gap:16px}
-  .card{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:0 8px 28px rgba(2,6,23,0.6);color:#e6eef6}
-  .section-title{margin:0 0 8px;color:#eaf6f1;font-size:15px}
-  .skills{display:flex;flex-wrap:wrap;gap:8px}
-  .pill{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-size:13px;color:var(--muted)}
-  .experience-list{display:flex;flex-direction:column;gap:12px}
-  .exp{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);cursor:grab}
-  .exp h4{margin:0;color:#fff;font-size:15px}
-  .exp p{margin:6px 0 0;color:var(--muted);font-size:13px}
-  .outcome{margin-top:10px;color:#bfeee1;font-weight:600;font-size:13px}
-  .project-list{display:flex;flex-direction:column;gap:10px}
-  .project{padding:12px;border-radius:10px;background:linear-gradient(0deg, rgba(255,255,255,0.015), transparent);border-left:4px solid rgba(255,255,255,0.03);cursor:grab}
-  .controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-  footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
-  .muted{color:var(--muted)}
-  .stat-row{display:flex;gap:10px;margin-top:8px;flex-wrap:wrap}
-  .stat{padding:10px;border-radius:10px;background:rgba(255,255,255,0.02);min-width:110px;text-align:center}
-  .stat h3{margin:0;color:#e6f6f1;font-size:18px}
-  .stat p{margin:6px 0 0;color:var(--muted);font-size:13px}
-
-  /* SPA pages */
-  .view{display:none;opacity:0;transform:translateY(6px);transition:all .36s ease}
-  .view.active{display:block;opacity:1;transform:none}
-
-  /* inline editable */
-  [data-editable]{outline:1px dashed transparent;transition:all .18s ease}
-  [data-editable]:hover{outline:1px dashed rgba(255,255,255,0.04);border-radius:6px}
-  .edit-hint{font-size:12px;color:var(--muted);margin-top:6px}
-
-  /* drag placeholder */
-  .dragging{opacity:0.5;transform:scale(0.99)}
-  .drop-target{box-shadow:0 6px 24px rgba(0,0,0,0.5);border:1px dashed rgba(255,255,255,0.04)}
-
-  /* modal */
-  .modal{position:fixed;left:0;top:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:60}
-  .modal-card{background:var(--card);padding:18px;border-radius:12px;max-width:720px;width:92%}
-
-  /* responsive */
-  @media (max-width:980px){
-    .grid{grid-template-columns:1fr}
-    .avatar{width:72px;height:72px}
-  }
-  /* small helpers */
-  .small{font-size:13px;color:var(--muted)}
-  .flex{display:flex;gap:8px;align-items:center}
-  .hidden{display:none}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guilherme Moneda — Technical Program Manager | Agile Coach</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="img/avatar.svg" type="image/svg+xml">
 </head>
 <body data-theme="dark">
-  <div class="app" id="app">
-    <header class="top">
+  <div id="app" class="app">
+    <header class="topbar">
       <div class="brand">
-        <div class="avatar" id="avatar">GM</div>
-        <div class="titleblock">
-          <h1 id="name" data-editable>Guilherme Moneda</h1>
-          <div class="small" id="role" data-editable>Technical Program Manager | Agile Coach</div>
-          <p class="lead" id="summary" data-editable>I help organizations deliver resilient B2B platforms and scale engineering capabilities. I combine technical delivery experience, agile coaching, and program leadership to turn complex roadmaps into measurable business outcomes.</p>
-          <div class="muted small" id="meta" style="margin-top:8px">Brooklyn, NY · English (Full Professional) · Portuguese (Native)</div>
+        <img src="img/avatar.svg" alt="GM" class="avatar" />
+        <div class="title">
+          <h1 id="name">Guilherme Moneda</h1>
+          <div id="role" class="subtitle">Technical Program Manager | Agile Coach</div>
         </div>
       </div>
 
-      <nav class="links">
-        <button class="ghost" id="themeBtn" title="Toggle theme">Theme</button>
-        <button class="ghost" id="editToggle" title="Toggle edit mode">Edit</button>
-        <button class="ghost" id="exportJSON">Export JSON</button>
-        <button class="ghost" id="importJSON">Import JSON</button>
-        <button class="btn" data-link="#home">Home</button>
-        <button class="btn" data-link="#experience">Experience</button>
-        <button class="btn" data-link="#projects">Projects</button>
-        <button class="btn" data-link="#contact">Contact</button>
-      </nav>
-    </header>
+```
+  <nav class="nav">
+    <button class="btn ghost" id="themeToggle">Theme</button>
+    <button class="btn" id="exportBtn">Export JSON</button>
+    <button class="btn" id="importBtn">Import JSON</button>
+    <a class="btn primary" href="#projects">Projects</a>
+    <a class="btn primary" href="#experience">Experience</a>
+    <a class="btn primary" href="#contact">Contact</a>
+  </nav>
+</header>
 
-    <main class="grid">
-      <section class="card" style="min-height:180px">
-        <!-- Views (SPA) -->
-        <div id="home" class="view active">
-          <h3 class="section-title">Selected Outcomes — highlights</h3>
-          <div class="project-list" id="outcomes"></div>
+<main class="container">
+  <section id="hero" class="card hero">
+    <div class="hero-left">
+      <h2 id="headline">I help organizations deliver resilient B2B platforms and scale engineering capabilities.</h2>
+      <p id="summary" class="muted">I combine technical delivery experience, agile coaching, and program leadership to turn complex roadmaps into measurable business outcomes.</p>
 
-          <h3 class="section-title" style="margin-top:16px">Quick Stats</h3>
-          <div class="stat-row">
-            <div class="stat"><h3 id="stat1">35+</h3><p>Engineers & Ops managed</p></div>
-            <div class="stat"><h3 id="stat2">19+</h3><p>Countries supported</p></div>
-            <div class="stat"><h3 id="stat3">4</h3><p>On-site Go-lives</p></div>
-          </div>
+      <div class="stats">
+        <div class="stat"><div class="num" id="statEngineers">35+</div><div class="label">Engineers managed</div></div>
+        <div class="stat"><div class="num" id="statCountries">19+</div><div class="label">Countries supported</div></div>
+        <div class="stat"><div class="num" id="statGoLive">4</div><div class="label">On-site go-lives</div></div>
+      </div>
 
-          <h3 class="section-title" style="margin-top:16px">About</h3>
-          <p id="aboutText" data-editable class="small">Technical program and delivery leader with strong QA & automation roots. I drive reliability, delivery cadence, and measurable improvements in platform operations.</p>
-        </div>
+      <div class="contact-row">
+        <a id="emailLink" class="chip" href="mailto:contact@guimoneda.com">contact@guimoneda.com</a>
+        <a id="linkedinLink" class="chip" href="https://www.linkedin.com/in/guilherme-moneda-b6ba9263" target="_blank">LinkedIn</a>
+        <a id="resumeLink" class="chip" href="/mnt/data/Profile.pdf" target="_blank">Resume (PDF)</a>
+      </div>
+    </div>
 
-        <div id="experience" class="view">
-          <h3 class="section-title">Experience</h3>
-          <div class="experience-list" id="experienceList"></div>
-          <div style="margin-top:12px" class="controls">
-            <button class="btn" id="addExperience">+ Add Experience</button>
-            <button class="ghost" id="resetDefaults">Restore Defaults</button>
-          </div>
-        </div>
+    <div class="hero-right card quick-edit">
+      <h4>Quick Edit</h4>
+      <small class="muted">Click any field below and edit — changes are saved to localStorage automatically.</small>
+      <div class="form-row">
+        <label>Full name</label>
+        <input id="editName" />
+      </div>
+      <div class="form-row">
+        <label>Headline</label>
+        <input id="editHeadline" />
+      </div>
+      <div class="form-row">
+        <label>Summary</label>
+        <textarea id="editSummary"></textarea>
+      </div>
+      <div class="form-row">
+        <button class="btn" id="saveQuick">Save</button>
+        <button class="btn ghost" id="resetBtn">Restore defaults</button>
+      </div>
+    </div>
+  </section>
 
-        <div id="projects" class="view">
-          <h3 class="section-title">Projects & Initiatives</h3>
-          <div class="project-list" id="projectsList"></div>
-          <div style="margin-top:12px" class="controls">
-            <button class="btn" id="addProject">+ Add Project</button>
-          </div>
-        </div>
+  <section id="projects" class="card section">
+    <div class="section-head">
+      <h3>Projects & Outcomes</h3>
+      <div class="section-actions">
+        <button class="btn" id="addProject">+ Project</button>
+        <button class="btn ghost" id="clearProjects">Clear</button>
+      </div>
+    </div>
+    <div id="projectsList" class="list"></div>
+  </section>
 
-        <div id="contact" class="view">
-          <h3 class="section-title">Contact & Resume</h3>
-          <p class="small">Email: <a href="mailto:guimoneda@gmail.com" id="emailLink">guimoneda@gmail.com</a></p>
-          <p class="small">LinkedIn: <a id="linkedinLink" href="https://www.linkedin.com/in/guilherme-moneda-b6ba9263" target="_blank">linkedin.com/in/guilherme-moneda-b6ba9263</a></p>
-          <p class="small">Download Resume (PDF): <a id="resumeLink" href="/mnt/data/Profile.pdf" target="_blank">/mnt/data/Profile.pdf</a></p>
-          <div style="margin-top:12px" class="controls">
-            <button class="btn" id="printBtn">Print / Save PDF</button>
-            <button class="ghost" id="downloadJSONBtn">Download content JSON</button>
-          </div>
+  <section id="experience" class="card section">
+    <div class="section-head">
+      <h3>Experience</h3>
+      <div class="section-actions">
+        <button class="btn" id="addExperience">+ Experience</button>
+        <button class="btn ghost" id="clearExp">Clear</button>
+      </div>
+    </div>
+    <div id="experienceList" class="list"></div>
+  </section>
 
-          <h3 class="section-title" style="margin-top:16px">Theme Palette</h3>
-          <div class="controls">
-            <label class="small flex">Accent: <input id="accentColor" type="color" value="#00d1b2"></label>
-            <label class="small flex">Accent 2: <input id="accent2Color" type="color" value="#7dd3fc"></label>
-            <button class="btn" id="applyPalette">Apply</button>
-          </div>
-        </div>
-      </section>
+  <section id="contact" class="card section">
+    <h3>Contact & Data</h3>
+    <div class="muted">Email: <a id="emailContact" href="mailto:contact@guimoneda.com">contact@guimoneda.com</a></div>
+    <div class="muted">Resume: <a href="/mnt/data/Profile.pdf" target="_blank">/mnt/data/Profile.pdf</a></div>
+    <div style="margin-top:12px" class="controls">
+      <button class="btn" id="downloadJSON">Download JSON</button>
+      <input id="importFile" type="file" accept="application/json" class="hidden" />
+    </div>
+    <div style="margin-top:12px" class="muted small">Tip: Export JSON to backup. Import to restore content on any host.</div>
+  </section>
+</main>
 
-      <aside class="card">
-        <h3 class="section-title">Skills</h3>
-        <div id="skills" class="skills"></div>
+<footer class="footer">
+  <div class="muted">© Guilherme Moneda — Dynamic BIO • Built for portfolio & deployment</div>
+</footer>
+```
 
-        <h3 class="section-title" style="margin-top:14px">Quick Import</h3>
-        <textarea id="quickImport" placeholder="Paste LinkedIn About / Experience snippet here" style="width:100%;min-height:120px;border-radius:10px;padding:8px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)"></textarea>
-        <div class="controls" style="margin-top:8px">
-          <button class="btn" id="doQuickImport">Import Text</button>
-          <button class="ghost" id="clearImport">Clear</button>
-        </div>
-
-        <h3 class="section-title" style="margin-top:14px">Edit mode</h3>
-        <p class="small">Double-click any editable text on the page to quick-edit. Use Edit toggle to lock/unlock edits.</p>
-        <div class="controls" style="margin-top:8px">
-          <button class="btn" id="toggleLocalSave">Save to Local</button>
-          <button class="ghost" id="clearLocal">Clear Local</button>
-        </div>
-
-        <h3 class="section-title" style="margin-top:14px">Shortcuts</h3>
-        <p class="small">Drag items to reorder. Double-click text to edit. Export/Import JSON to share or backup content.</p>
-      </aside>
-    </main>
-
-    <footer>
-      <div class="small muted">Generated from your uploaded resume. Content is editable and saved locally. Export JSON to backup.</div>
-    </footer>
   </div>
 
-  <!-- Modal container -->
-  <div id="modalRoot" class="hidden"></div>
+  <script src="assets/js/script.js" defer></script>
 
-<script>
-/*
-  Dynamic BIO SPA
-  - Data-driven: all content in `profile` JSON object.
-  - Inline edit: double click to edit text nodes (contenteditable fallback via prompt for safety).
-  - LocalStorage persistence.
-  - Drag-and-drop reorder for experience and projects.
-  - Export / Import JSON.
-  - SPA-style hash routing with transitions.
-  - Theme palette controls and animated counters.
-*/
-
-/* ---------- Initial profile data (extracted from PDF) ---------- */
-const DEFAULT_PROFILE = {
-  name: "Guilherme Moneda",
-  role: "Technical Program Manager | Agile Coach",
-  summary: "I help organizations deliver resilient B2B platforms and scale engineering capabilities. I combine technical delivery experience, agile coaching, and program leadership to turn complex roadmaps into measurable business outcomes.",
-  about: "Technical program and delivery leader with strong QA & automation foundations. I drive reliability, delivery cadence, and measurable improvements in platform operations.",
-  location: "Brooklyn, NY",
-  email: "guimoneda@gmail.com",
-  linkedin: "https://www.linkedin.com/in/guilherme-moneda-b6ba9263",
-  resumePath: "/mnt/data/Profile.pdf",
-  stats: { engineers: "35+", countries: "19+", golives: 4 },
-  skills: ["Program Management","Agile / Scrum","CI/CD & DevOps","Test Automation (Selenium, Robot)","Cloud (GCP)","Release Management","OKRs & Metrics","Stakeholder Mgmt","Python / JS basics"],
-  outcomes: [
-    { title: "Built & scaled cloud platform team to support B2B e-commerce", detail: "Led a 35+ cross-functional organization of DevOps, Solution Architects and Operations Managers to maintain and evolve a cloud & infra platform. This enabled the client’s B2B e-commerce operations to operate reliably at scale.", outcome: "Improved platform readiness for B2B operations, enabling continuous delivery and product growth."},
-    { title: "Global product stabilization & expansion (BEES)", detail: "Contributed to QA, automation and release efforts for a B2B product used in 19+ countries and serving millions of users.", outcome: "Drove release-quality improvements and four successful country go-lives (Colombia, Ecuador, Argentina, Dominican Republic)."},
-    { title: "Program metricization & cost optimization", detail: "Defined OKRs and DevOps metrics (team productivity, CI/CD health) and monitored costs monthly to identify optimization opportunities.", outcome: "Introduced measurable KPIs and cost-awareness routines to improve delivery predictability and resource allocation."}
-  ],
-  experience: [
-    { company: "Avenue Code", title: "Principal Project Manager", period: "Dec 2022 – Dec 2023", location: "São Paulo (remote)", outcome: "Managed enterprise delivery streams; aligned program scope with product and leadership goals."},
-    { company: "CI&T", title: "Technical Project Manager | Agile Coach", period: "Aug 2021 – Dec 2022", location: "São Paulo, Brazil", outcome: "Built and led teams supporting cloud infra and B2B platforms; implemented OKRs & delivery metrics."},
-    { company: "CI&T", title: "Scrum Master", period: "Jan 2020 – Jul 2021", location: "Campinas region", outcome: "Accelerated delivery cadence and introduced quality-focused processes for the BEES Rewards product."},
-    { company: "Anheuser-Busch InBev", title: "Squad Leader (On-site)", period: "Jul 2019 – Dec 2019", location: "Manhattan, NY", outcome: "Trained and scaled cross-border teams, enabling self-sufficient agile delivery for international operations."},
-    { company: "CI&T", title: "Senior Software QA Engineer", period: "Jan 2017 – Jun 2019", location: "Campinas region", outcome: "Led automation and QA improvements across backend and frontend systems to secure multi-country releases."}
-  ],
-  projects: [
-    { title: "CI/CD & Disaster Recovery programs", detail: "Conceptualized and executed CI/CD, disaster recovery and high availability initiatives from planning through rollout.", outcome: "Increased resilience and reduced manual intervention during releases."},
-    { title: "Automation & Testing Leadership", detail: "Led automation using Selenium WebDriver and Robot Framework, and introduced performance testing and structured risk management.", outcome: "Higher release confidence and fewer regressions across major releases."},
-    { title: "OhaYou — Principal Cofounder", detail: "Built product, navigated early-stage ops and product-market fit activities as a cofounder.", outcome: "Delivered product launches and early traction."}
-  ]
-};
-
-/* ---------- App state ---------- */
-let profile = null;
-let editMode = false;
-
-/* ---------- Utilities ---------- */
-const $ = (sel, root=document) => root.querySelector(sel);
-const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
-
-function saveToLocal(){
-  try{
-    localStorage.setItem('bio_profile', JSON.stringify(profile));
-    showToast('Saved to localStorage');
-  }catch(e){ console.error(e); showToast('Save failed'); }
-}
-function loadFromLocal(){
-  try{
-    const raw = localStorage.getItem('bio_profile');
-    if(raw) return JSON.parse(raw);
-  }catch(e){ console.error(e); }
-  return null;
-}
-function clearLocal(){
-  localStorage.removeItem('bio_profile'); showToast('Local saved data cleared'); location.reload();
-}
-function downloadJSON(obj, filename='bio-profile.json'){
-  const blob = new Blob([JSON.stringify(obj, null, 2)], {type:'application/json'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url; a.download = filename; document.body.appendChild(a); a.click(); a.remove();
-  URL.revokeObjectURL(url);
-}
-
-/* ---------- Render helpers ---------- */
-function renderProfile(){
-  if(!profile) return;
-  $('#name').textContent = profile.name;
-  $('#role').textContent = profile.role;
-  $('#summary').textContent = profile.summary;
-  $('#aboutText').textContent = profile.about;
-  $('#meta').textContent = `${profile.location} · English (Full Professional) · Portuguese (Native)`;
-  $('#emailLink').textContent = profile.email; $('#emailLink').href = `mailto:${profile.email}`;
-  $('#linkedinLink').href = profile.linkedin; $('#resumeLink').href = profile.resumePath;
-  // stats with animated count
-  animateCount('#stat1', profile.stats.engineers);
-  animateCount('#stat2', profile.stats.countries);
-  animateCount('#stat3', profile.stats.golives);
-
-  // skills
-  const skillsRoot = $('#skills'); skillsRoot.innerHTML = '';
-  profile.skills.forEach(s=>{
-    const el = document.createElement('div'); el.className='pill'; el.textContent = s;
-    skillsRoot.appendChild(el);
-  });
-
-  // outcomes
-  const outcomesRoot = $('#outcomes'); outcomesRoot.innerHTML = '';
-  profile.outcomes.forEach((o, idx)=>{
-    const el = document.createElement('div'); el.className='project'; el.draggable = true;
-    el.dataset.idx = idx;
-    el.innerHTML = `<h4 contenteditable="false" data-editable>${o.title}</h4><p class="small muted">${o.detail}</p><div class="outcome">${o.outcome}</div>`;
-    attachDragHandlers(el, 'outcomes');
-    if(editMode) makeEditable(el);
-    outcomesRoot.appendChild(el);
-  });
-
-  // experience
-  const expRoot = $('#experienceList'); expRoot.innerHTML = '';
-  profile.experience.forEach((e, idx)=>{
-    const el = document.createElement('div'); el.className='exp'; el.draggable = true;
-    el.dataset.idx = idx;
-    el.innerHTML = `<h4 data-editable>${e.company} — ${e.title}</h4><p class="small muted">${e.period} · ${e.location}</p><div class="outcome">${e.outcome}</div>`;
-    attachDragHandlers(el, 'experienceList');
-    if(editMode) makeEditable(el);
-    expRoot.appendChild(el);
-  });
-
-  // projects
-  const projRoot = $('#projectsList'); projRoot.innerHTML = '';
-  profile.projects.forEach((p, idx)=>{
-    const el = document.createElement('div'); el.className='project'; el.draggable = true;
-    el.dataset.idx = idx;
-    el.innerHTML = `<h4 data-editable>${p.title}</h4><p class="small muted">${p.detail}</p><div class="outcome">${p.outcome}</div>`;
-    attachDragHandlers(el, 'projectsList');
-    if(editMode) makeEditable(el);
-    projRoot.appendChild(el);
-  });
-}
-
-/* ---------- Animated counters ---------- */
-function animateCount(selector, target){
-  const el = document.querySelector(selector);
-  if(!el) return;
-  // target may be string with plus sign
-  const raw = String(target);
-  if(/\D/.test(raw)){
-    el.textContent = raw; return;
-  }
-  const to = parseInt(raw,10);
-  let start = 0;
-  const dur = 900;
-  const startTime = performance.now();
-  function step(t){
-    const p = Math.min(1, (t-startTime)/dur);
-    const v = Math.floor(p * to);
-    el.textContent = v + (raw.includes('+') ? '+' : '');
-    if(p < 1) requestAnimationFrame(step);
-    else el.textContent = (to) + (raw.includes('+') ? '+' : '');
-  }
-  requestAnimationFrame(step);
-}
-
-/* ---------- Drag and Drop ---------- */
-function attachDragHandlers(el, containerId){
-  el.addEventListener('dragstart', (ev)=>{
-    el.classList.add('dragging'); ev.dataTransfer.setData('text/plain', el.dataset.idx);
-    ev.dataTransfer.effectAllowed = 'move';
-  });
-  el.addEventListener('dragend', ()=> el.classList.remove('dragging'));
-  const container = document.getElementById(containerId);
-  container.addEventListener('dragover', (ev)=>{
-    ev.preventDefault();
-    const after = getDragAfterElement(container, ev.clientY);
-    $$('.drop-placeholder', container).forEach(n=>n.remove());
-    const placeholder = document.createElement('div');
-    placeholder.className = 'drop-placeholder';
-    placeholder.style.height = '10px';
-    placeholder.style.background = 'rgba(255,255,255,0.02)';
-    placeholder.style.margin = '6px 0';
-    if(after == null) container.appendChild(placeholder);
-    else container.insertBefore(placeholder, after);
-  });
-  container.addEventListener('drop', (ev)=>{
-    ev.preventDefault();
-    $$('.drop-placeholder', container).forEach(n=>n.remove());
-    const draggedIdx = ev.dataTransfer.getData('text/plain');
-    const draggingEl = container.querySelector(`[data-idx="${draggedIdx}"]`);
-    // find drop position
-    const after = getDragAfterElement(container, ev.clientY);
-    if(after == null) container.appendChild(draggingEl);
-    else container.insertBefore(draggingEl, after);
-    // rebuild underlying data array
-    if(containerId === 'experienceList'){
-      profile.experience = Array.from(container.children).map((c)=>extractExpFromNode(c));
-    } else if(containerId === 'projectsList'){
-      profile.projects = Array.from(container.children).map((c)=>extractProjectFromNode(c));
-    } else if(containerId === 'outcomes'){
-      profile.outcomes = Array.from(container.children).map((c)=>extractOutcomeFromNode(c));
-    }
-    saveToLocal();
-    renderProfile();
-  });
-}
-function getDragAfterElement(container, y){
-  const draggableElements = [...container.querySelectorAll('.exp, .project')].filter(el => !el.classList.contains('dragging'));
-  let closest = null;
-  let closestOffset = Number.NEGATIVE_INFINITY;
-  draggableElements.forEach(el=>{
-    const box = el.getBoundingClientRect();
-    const offset = y - box.top - box.height/2;
-    if(offset > closestOffset){
-      closestOffset = offset;
-      closest = el;
-    }
-  });
-  return closest;
-}
-function extractExpFromNode(node){
-  const title = node.querySelector('h4')?.textContent || '';
-  const details = node.querySelector('p')?.textContent || '';
-  const outcome = node.querySelector('.outcome')?.textContent || '';
-  // try to split company and role
-  const parts = title.split('—').map(s=>s.trim());
-  let company = parts[0] || title; let role = parts[1] || '';
-  return { company: company, title: role || '', period: details.split('·')[0]?.trim() || '', location: details.split('·')[1]?.trim() || '', outcome };
-}
-function extractProjectFromNode(node){
-  return { title: node.querySelector('h4')?.textContent || '', detail: node.querySelector('p')?.textContent || '', outcome: node.querySelector('.outcome')?.textContent || '' };
-}
-function extractOutcomeFromNode(node){
-  return { title: node.querySelector('h4')?.textContent || '', detail: node.querySelector('p')?.textContent || '', outcome: node.querySelector('.outcome')?.textContent || '' };
-}
-
-/* ---------- Inline edit / edit mode ---------- */
-function enableEditMode(flag){
-  editMode = flag;
-  document.body.classList.toggle('editing', flag);
-  if(flag){
-    // make elements editable via dblclick
-    $$('[data-editable]').forEach(el=> el.setAttribute('title', 'Double-click to edit'));
-    // attach dblclick handlers
-  }else{
-    $$('[data-editable]').forEach(el=> el.removeAttribute('title'));
-  }
-}
-
-function makeEditable(container){
-  // search for [data-editable] inside container
-  container.querySelectorAll('[data-editable]').forEach(el=>{
-    el.addEventListener('dblclick', onEditDblClick);
-  });
-}
-function onEditDblClick(e){
-  const el = e.currentTarget;
-  // For safety & cross-browser compatibility use prompt editing instead of contentEditable
-  const old = el.textContent;
-  const val = prompt('Edit text:', old);
-  if(val === null) return;
-  el.textContent = val;
-  // synchronize back to profile model (best-effort)
-  syncDomToModel();
-  saveToLocal();
-}
-
-/* ---------- Sync DOM back into model (best-effort) ---------- */
-function syncDomToModel(){
-  profile.name = $('#name').textContent.trim();
-  profile.role = $('#role').textContent.trim();
-  profile.summary = $('#summary').textContent.trim();
-  profile.about = $('#aboutText').textContent.trim();
-  // extract experience nodes
-  profile.experience = Array.from($('#experienceList').children).map((c)=>extractExpFromNode(c));
-  profile.projects = Array.from($('#projectsList').children).map((c)=>extractProjectFromNode(c));
-  profile.outcomes = Array.from($('#outcomes').children).map((c)=>extractOutcomeFromNode(c));
-}
-
-/* ---------- Quick import heuristics ---------- */
-function quickImport(text){
-  if(!text) return;
-  // try to break into lines and find candidate sentences
-  const lines = text.split(/\\n+/).map(s=>s.trim()).filter(Boolean);
-  // find headline-like
-  const headline = lines.find(l=>/manager|coach|program|principal|tp m|technical/i.test(l));
-  if(headline) profile.role = headline;
-  // summary: longest line
-  const summary = lines.reduce((a,b)=> a.length>b.length ? a : b, '');
-  if(summary.length>40) profile.summary = summary;
-  // find projects (lines starting with - or containing 'Outcome' etc)
-  const projects = lines.filter(l=>l.startsWith('-') || /outcome|result|go-live|program|ci\/cd|okrs/i.test(l)).slice(0,5);
-  if(projects.length){
-    profile.outcomes = projects.map(p=>({ title: p.replace(/^[-*\\s]+/,'').slice(0,80), detail: p.replace(/^[-*\\s]+/,'').slice(0,220), outcome: '' }));
-  }
-  saveToLocal();
-  renderProfile();
-  showToast('Imported text and updated the page (review content).');
-}
-
-/* ---------- Misc UI helpers ---------- */
-function showModal(html){
-  const root = $('#modalRoot');
-  root.innerHTML = `<div class="modal" id="modal"><div class="modal-card">${html}<div style="text-align:right;margin-top:12px"><button class="btn" id="closeModal">Close</button></div></div></div>`;
-  root.classList.remove('hidden');
-  $('#closeModal').addEventListener('click', ()=>{ root.innerHTML=''; root.classList.add('hidden'); });
-}
-function showToast(msg, duration=1500){
-  const t = document.createElement('div');
-  t.textContent = msg;
-  t.style.position='fixed'; t.style.right='14px'; t.style.bottom='18px'; t.style.padding='10px 12px'; t.style.borderRadius='8px';
-  t.style.background='linear-gradient(90deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3))'; t.style.color='#fff'; t.style.zIndex=9999;
-  document.body.appendChild(t);
-  setTimeout(()=>{ t.style.transition='all .28s ease'; t.style.opacity='0'; t.style.transform='translateY(6px)'; }, duration);
-  setTimeout(()=> t.remove(), duration+420);
-}
-
-/* ---------- Event wiring & SPA ---------- */
-function init(){
-  // Load profile from localStorage or defaults
-  const local = loadFromLocal();
-  profile = local || DEFAULT_PROFILE;
-  renderProfile();
-
-  // Hash routing
-  const links = $$('[data-link]');
-  links.forEach(btn=>{
-    btn.addEventListener('click', ()=> {
-      const target = btn.dataset.link;
-      location.hash = target;
-      routeTo(target.replace('#',''));
-    });
-  });
-  window.addEventListener('hashchange', ()=> routeTo(location.hash.replace('#','') || 'home'));
-
-  // nav direct open
-  if(location.hash) routeTo(location.hash.replace('#','') || 'home');
-
-  // UI controls
-  $('#themeBtn').addEventListener('click', toggleTheme);
-  $('#editToggle').addEventListener('click', ()=> {
-    enableEditMode(!editMode);
-    showToast(editMode ? 'Edit unlocked — double-click elements to edit' : 'Edit locked');
-  });
-  $('#exportJSON').addEventListener('click', ()=> downloadJSON(profile));
-  $('#importJSON').addEventListener('click', ()=> {
-    showModal(`<h3>Import profile JSON</h3><p class="small muted">Paste a profile JSON object to import (this will overwrite current content).</p><textarea id="importJsonArea" style="width:100%;min-height:220px;background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04);padding:8px"></textarea><div style="text-align:right;margin-top:8px"><button class="btn" id="doImportJson">Import</button></div>`);
-    $('#doImportJson').addEventListener('click', ()=>{
-      try{
-        const val = $('#importJsonArea').value;
-        const parsed = JSON.parse(val);
-        profile = parsed;
-        saveToLocal();
-        renderProfile();
-        $('#modalRoot').innerHTML=''; $('#modalRoot').classList.add('hidden');
-        showToast('Imported JSON successfully');
-      }catch(e){ alert('Invalid JSON'); }
-    });
-  });
-
-  $('#doQuickImport').addEventListener('click', ()=> quickImport($('#quickImport').value));
-  $('#clearImport').addEventListener('click', ()=> { $('#quickImport').value=''; });
-
-  $('#addExperience').addEventListener('click', ()=>{
-    profile.experience.unshift({ company: "New Company", title: "New Role", period: "Period", location: "Location", outcome: "Outcome statement" });
-    saveToLocal(); renderProfile();
-  });
-  $('#addProject').addEventListener('click', ()=>{
-    profile.projects.unshift({ title: "New Project", detail: "Short description", outcome: "Outcome / result" });
-    saveToLocal(); renderProfile();
-  });
-
-  $('#resetDefaults').addEventListener('click', ()=> {
-    if(confirm('Restore defaults from uploaded resume? This will overwrite your current content.')) {
-      profile = DEFAULT_PROFILE; saveToLocal(); renderProfile();
-    }
-  });
-
-  $('#toggleLocalSave').addEventListener('click', saveToLocal);
-  $('#clearLocal').addEventListener('click', ()=> { if(confirm('Clear saved local data?')) clearLocal(); });
-
-  $('#printBtn').addEventListener('click', ()=> window.print());
-  $('#downloadJSONBtn').addEventListener('click', ()=> downloadJSON(profile, 'bio-profile.json'));
-
-  // palette & theme
-  $('#applyPalette').addEventListener('click', ()=>{
-    const a = $('#accentColor').value; const b = $('#accent2Color').value;
-    document.documentElement.style.setProperty('--accent', a);
-    document.documentElement.style.setProperty('--accent-2', b);
-    showToast('Palette applied');
-  });
-
-  // Import JSON file via file picker when clicking import JSON button (also allow paste)
-  // (Already implemented via modal)
-
-  // make editable nodes dblclickable if editMode ON
-  document.body.addEventListener('dblclick', (ev)=>{
-    if(!editMode) return;
-    const target = ev.target.closest('[data-editable]');
-    if(target) onEditDblClick({currentTarget: target});
-  });
-
-  // initial edit mode = off
-  enableEditMode(false);
-}
-
-/* ---------- Routing ---------- */
-function routeTo(name){
-  const views = $$('.view');
-  views.forEach(v=> v.classList.remove('active'));
-  const v = $(`#${name}`);
-  if(v) v.classList.add('active');
-  // small transition for scrolling to top
-  window.scrollTo({top:0, behavior:'smooth'});
-}
-
-/* ---------- Export / Import via file input (drag/drop) ---------- */
-window.addEventListener('load', init);
-
-/* ---------- Minimal accessibility for drag (re-attach after render) ---------- */
-function reattachEditHandlers(){
-  if(editMode){
-    $$('[data-editable]').forEach(el=> el.addEventListener('dblclick', onEditDblClick));
-  }else{
-    $$('[data-editable]').forEach(el=> el.removeEventListener('dblclick', onEditDblClick));
-  }
-}
-
-/* ---------- Helpers for extracting text after reorder ---------- */
-/* already implemented: extractExpFromNode, extractProjectFromNode, extractOutcomeFromNode */
-
-/* ---------- After render: ensure drag & inline edit reattached ---------- */
-const observer = new MutationObserver(()=> { reattachEditHandlers(); });
-observer.observe(document.getElementById('app'), {subtree:true, childList:true});
-
-/* ---------- Initialize UI ---------- */
-init();
-
-</script>
 </body>
 </html>
