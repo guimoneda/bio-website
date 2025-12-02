@@ -1,0 +1,11 @@
+guimoneda.com {
+    encode gzip
+    tls {
+        protocols tls1.2 tls1.3
+    }
+    reverse_proxy web:8080
+    @http_only {
+        protocol http
+    }
+    redir @http_only https://{host}{uri}
+}

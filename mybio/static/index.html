@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guilherme Moneda</title>
+</head>
+<body>
+    <h1 id="name"></h1>
+    <h2 id="role"></h2>
+    <p id="summary"></p>
+
+    <script>
+        fetch('/api/bio')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('name').innerText = data.name;
+                document.getElementById('role').innerText = data.role;
+                document.getElementById('summary').innerText = data.summary;
+            });
+    </script>
+</body>
+</html>
